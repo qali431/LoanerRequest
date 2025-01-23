@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="DELETE">
+        <name>x_cdltd_loaner_req_loaner_request_script_1</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[if (current.item_type == 'cmdb_ci_computer') {
+        var request = new sn_ws.RESTMessageV2();
+        request.setEndpoint('https://nowlearning-nlinst02387995-0001.lab.service-now.com/api/now/table/u_password_vault?sysparm_query=u_asset%3D' + current.cmdb_ci.asset_tag + '&sysparm_fields=u_password&sysparm_limit=1');
+        request.setHttpMethod('GET');
+        //Eg. UserName="admin", Password="admin" for this code sample.
+        var user = 'admin';
+        var password = 'admin';
+        request.setBasicAuth(user, password);
+        request.setRequestHeader("Accept", "application/json");
+        var response = request.execute();
+      
+        var obj = JSON.parse(response.getBody());
+        var myPass = obj.result[0].password;
+        gs.info('u_password: ' + myPass);
+    }]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-22 22:07:07</sys_created_on>
+        <sys_id>229b4dc1749712107f44e86ba88d0a1b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_cdltd_loaner_req_loaner_request_script_1</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_req">224958bbd0c312107f444f730adb17cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">224958bbd0c312107f444f730adb17cd</sys_scope>
+        <sys_update_name>sys_script_email_229b4dc1749712107f44e86ba88d0a1b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-22 22:07:07</sys_updated_on>
+    </sys_script_email>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Loaner Request">224958bbd0c312107f444f730adb17cd</application>
+        <file_path/>
+        <instance_id>043fface470f1290ad588549116d4345</instance_id>
+        <instance_name>nowlearning-nlinst02387995-0001</instance_name>
+        <name>sys_script_email_229b4dc1749712107f44e86ba88d0a1b</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_email"&gt;&lt;sys_script_email action="INSERT_OR_UPDATE"&gt;&lt;name&gt;x_cdltd_loaner_req_loaner_request_script_1&lt;/name&gt;&lt;new_lines_to_html&gt;false&lt;/new_lines_to_html&gt;&lt;script&gt;&lt;![CDATA[if (current.item_type == 'cmdb_ci_computer') {
+        var request = new sn_ws.RESTMessageV2();
+        request.setEndpoint('https://nowlearning-nlinst02387995-0001.lab.service-now.com/api/now/table/u_password_vault?sysparm_query=u_asset%3D' + current.cmdb_ci.asset_tag + '&amp;sysparm_fields=u_password&amp;sysparm_limit=1');
+        request.setHttpMethod('GET');
+        //Eg. UserName="admin", Password="admin" for this code sample.
+        var user = 'admin';
+        var password = 'admin';
+        request.setBasicAuth(user, password);
+        request.setRequestHeader("Accept", "application/json");
+        var response = request.execute();
+      
+        var obj = JSON.parse(response.getBody());
+        var myPass = obj.result[0].password;
+        gs.info('u_password: ' + myPass);
+    }]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_email&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-01-22 22:07:07&lt;/sys_created_on&gt;&lt;sys_id&gt;229b4dc1749712107f44e86ba88d0a1b&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;x_cdltd_loaner_req_loaner_request_script_1&lt;/sys_name&gt;&lt;sys_package display_value="Loaner Request" source="x_cdltd_loaner_req"&gt;224958bbd0c312107f444f730adb17cd&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Loaner Request"&gt;224958bbd0c312107f444f730adb17cd&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_email_229b4dc1749712107f44e86ba88d0a1b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-01-22 22:07:07&lt;/sys_updated_on&gt;&lt;/sys_script_email&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-72783633</payload_hash>
+        <record_name>x_cdltd_loaner_req_loaner_request_script_1</record_name>
+        <reverted_from/>
+        <source>f079ec33d04712107f444f730adb1797</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-22 22:07:07</sys_created_on>
+        <sys_id>aa9b4dc1749712107f44e86ba88d0a1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194900e0e9d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-22 22:07:07</sys_updated_on>
+        <type>Email Script</type>
+        <update_guid>6e9b4dc1b79712101d86194b3d66101d</update_guid>
+        <update_guid_history>6e9b4dc1b79712101d86194b3d66101d:-72783633</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-01-22 22:15:53</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_email">sys_script_email</sys_db_object>
+        <sys_id>630545c381cf4f0ba1b3514ca7960f91</sys_id>
+        <sys_metadata>229b4dc1749712107f44e86ba88d0a1b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_cdltd_loaner_req_loaner_request_script_1</sys_name>
+        <sys_package display_value="Loaner Request" source="x_cdltd_loaner_req">224958bbd0c312107f444f730adb17cd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">224958bbd0c312107f444f730adb17cd</sys_scope>
+        <sys_scope_delete display_value="">2e80c95c66f645cda001b5d4209f26d9</sys_scope_delete>
+        <sys_update_name>sys_script_email_229b4dc1749712107f44e86ba88d0a1b</sys_update_name>
+        <sys_update_version display_value="sys_script_email_229b4dc1749712107f44e86ba88d0a1b">aa9b4dc1749712107f44e86ba88d0a1e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-22 22:15:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
